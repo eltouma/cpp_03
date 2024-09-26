@@ -9,7 +9,10 @@ void	ClapTrap::attack(const std::string& target)
 		this->_energyPoints = 0;
 	if (!this->_energyPoints || !this->_hitPoints)
 		throw std::invalid_argument("Has no longer enough energy or hit points to attack");
-std::cout << "💣  ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
+	if (this->_attackDamage == 1)
+		std::cout << "💣  ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " point of damage!" << std::endl;
+	else
+		std::cout << "💣  ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
