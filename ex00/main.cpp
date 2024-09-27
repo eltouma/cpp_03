@@ -19,7 +19,7 @@ int	main(void)
 	}
 	catch (std::invalid_argument& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr << e.what();
 		return (1);
 	}
 	return (0);
