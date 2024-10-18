@@ -1,9 +1,10 @@
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int	main(void)
 {
-	try {
 		ClapTrap	a;
+		ScavTrap	e;
 		ClapTrap	b("Jackson");
 
 		ClapTrap	c("test1");
@@ -25,13 +26,5 @@ int	main(void)
 		for (int i = 0; i < 3; i++)
 			c.attack(b.getName());
 		std::cout << "ok\n";
-		for (int i = 0; i < 3; i++)
-			c.attack(b.getName());
-	}
-	catch (std::invalid_argument& e)
-	{
-		std::cerr << e.what();
-		// return (1);
-	}
 	return (0);
 }
