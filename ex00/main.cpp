@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/28 23:30:44 by eltouma           #+#    #+#             */
+/*   Updated: 2024/10/28 23:35:53 by eltouma          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 int	main(void)
 {
-	const char *name[] = {"Jackson", "Jess", "Fabrice", NULL};
-	int length = sizeof(name) / sizeof(name[0]);
+	const char *name[] = {"Jackson", "Jess", "Fabrice", "Elzu", "Mateo", NULL};
+	int	length = tab_size(name);
 
 	ClapTrap claptrap[length];
-	for (int i = 0; i < length -1 ; i++)
+	for (int i = 0; i < length - 1; i++)
 		claptrap[i] = ClapTrap(name[i]);
 	for (int j = 0; j < length - 1; j++)
 	{

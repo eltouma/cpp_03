@@ -1,34 +1,73 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrapUtils.cpp                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/28 23:31:35 by eltouma           #+#    #+#             */
+/*   Updated: 2024/10/28 23:36:28 by eltouma          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(void) : _name("John"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+void	ClapTrap::attack(const std::string& target)
 {
-	std::cout << this->_name << " has been created" << std::endl;
+	if (this->_energyPoints)
+		this->_energyPoints -= 1;
+	else
+		this->_energyPoints = 0;
+	if (!this->_energyPoints || !this->_hitPoints)
+	{
+		std::cout << this->_name << " has no longer enough energy or hit points to attack (energy: "
+		<< this->_energyPoints << ", hit: " << this->_hitPoints << ")\n" << std::endl;
+		throw std::invalid_argument("");
+	}
+		std::cout << "💣 " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " point(s) of damage!" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& obj)
+void	ClapTrap::beRepaired(unsigned int amount)
 {
-	std::cout << this->_name << " has been created by copy" << std::endl;
-	*this = obj;
+	this->_hitPoints += amount;
+	if (this->_energyPoints)
+		this->_energyPoints -= 1;
+	else
+		this->_energyPoints = 0;
+	if (!this->_energyPoints || !this->_hitPoints)
+	{
+		std::cout << this->_name << " has no longer enough energy or hit points to attack (energy: "
+		<< this->_energyPoints << ", hit: " << this->_hitPoints << ")\n" << std::endl;
+		throw std::invalid_argument("");
+	}
+	std::cout << "✅ " << this->_name << "\n\thitPoints: \t" << this->_hitPoints << "\n\tenergyPoints: \t" << this->_energyPoints << "\n\tattackDamage: \t" << this->_attackDamage << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+void	ClapTrap::takeDamage(unsigned int amount)
 {
-	std::cout << this->_name << " has been created" << std::endl;
+	if (this->_hitPoints <= 0)
+		this->_hitPoints = 0;
+	else
+		this->_hitPoints -= amount;
+	if (!this->_energyPoints || !this->_hitPoints)
+	{
+		std::cout << this->_name << " has no longer enough energy or hit points to attack (energy: "
+		<< this->_energyPoints << ", hit: " << this->_hitPoints << ")\n" << std::endl;
+		throw std::invalid_argument("");
+	}
+	std::cout << "💥 " << this->_name << " was attacked" << "\n\thitPoints: \t" << this->_hitPoints << "\n\tenergyPoints: \t" << this->_energyPoints << "\n\tattackDamage: \t" << this->_attackDamage << std::endl;
 }
 
-ClapTrap::~ClapTrap(void)
+int	tab_size(const char *name[])
 {
-	std::cout << this->_name << " has been destroyed" << std::endl;
-}
+	int	i;
 
-ClapTrap& ClapTrap::operator=(const ClapTrap& rhs)
-{
-	if (this != &rhs)
-		this->_name = rhs.getName();
-	return (*this);
-}
-
-std::string	ClapTrap::getName(void) const
-{
-	return (this->_name);
+	i = 0;
+	while (name[i])
+	{
+		for (int j = 0; name[j]; j++)
+			j += 1;
+		i += 1;
+	}
+	return (i + 1);
 }
