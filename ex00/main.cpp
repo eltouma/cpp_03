@@ -2,40 +2,35 @@
 
 int	main(void)
 {
-		ClapTrap	a;
-		ClapTrap	b("Jackson");
-		ClapTrap	c("test1");
-		ClapTrap	d("test2");
-	try {
-		for (int i = 0; i < 2; i++)
-			a.beRepaired(12);
-		for (int i = 0; i < 2; i++)
-			a.attack(b.getName());
-		for (int i = 0; i < 3; i++)
-			a.takeDamage(3);
-		for (int i = 0; i < 13; i++)
-			a.takeDamage(3);
-		for (int i = 0; i < 13; i++)
-			a.takeDamage(3);
-	}
-	catch (std::invalid_argument& e)
+	const char *name[] = {"Jackson", "Jess", "Fabrice", "Mathieu", NULL};
+	ClapTrap claptrap[5];
+	for (int j = 0; j < 4; j++)
 	{
-		std::cerr << e.what();
+		claptrap[j] = ClapTrap(name[j]);
 	}
-	try {
-		for (int i = 0; i < 2; i++)
-			c.beRepaired(12);
-		for (int i = 0; i < 2; i++)
-			c.attack(b.getName());
-		for (int i = 0; i < 3; i++)
-			c.attack(b.getName());
-		for (int i = 0; i < 3; i++)
-			c.attack(b.getName());
-	}
-	catch (std::invalid_argument& e)
+	for (int k = 0; k < 4; k++)
 	{
-		std::cerr << e.what();
-		return (1);
+		try {
+			for (int i = 0; i < 2; i++)
+				claptrap[k].beRepaired(12);
+			for (int i = 0; i < 3; i++)
+				claptrap[k].takeDamage(3);
+			for (int i = 0; i < 2; i++)
+				claptrap[k].attack(claptrap[k+1].getName());
+			for (int i = 0; i < 3; i++)
+				claptrap[k].attack(claptrap[k+1].getName());
+			for (int i = 0; i < 3; i++)
+				claptrap[k].attack(claptrap[k+1].getName());
+			for (int i = 0; i < 3; i++)
+				claptrap[k].attack(claptrap[k+1].getName());
+			for (int i = 0; i < 2; i++)
+				claptrap[k].beRepaired(12);
+		}
+		catch (std::invalid_argument& e)
+		{
+			std::cerr << e.what();
+		}
+
 	}
 	return (0);
 }
