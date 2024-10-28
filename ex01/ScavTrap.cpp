@@ -18,6 +18,8 @@ ScavTrap::ScavTrap(const ScavTrap& obj)
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
+	this->_hitPoints = 100;
+	this->_energyPoints = 100;
 	std::cout << this->_name << " has been created" << std::endl;
 }
 
