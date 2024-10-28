@@ -2,23 +2,23 @@
 
 ClapTrap::ClapTrap(void) : _name("John"), _hitPoints(100), _energyPoints(50), _attackDamage(20)
 {
-	std::cout << this->_name << " has been created" << std::endl;
+	std::cout << "\033[1;32mDefault ClapTrap\033[0m " << this->_name << " has been created" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& obj)
 {
-	std::cout << this->_name << " has been created by copy" << std::endl;
+	std::cout << "\033[1;34mCopy ClapTrap\033[0m " << this->_name << " has been created" << std::endl;
 	*this = obj;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(100), _energyPoints(50), _attackDamage(20)
 {
-	std::cout << this->_name << " has been created" << std::endl;
+	std::cout << "\033[1;33mClapTrap\033[0m " << this->_name << " has been created" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << this->_name << " has been destroyed" << std::endl;
+	std::cout << "\033[1;32mClapTrap\033[0m " << this->_name << " has been destroyed" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& rhs)

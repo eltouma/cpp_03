@@ -2,12 +2,12 @@
 
 ScavTrap::ScavTrap(void)
 {
-	std::cout << "COUCOU\n";
+	std::cout << "\033[1;36mScavTrap\033[0m " << this->_name << " has been created" << std::endl;
 }
 
 ScavTrap::~ScavTrap(void)
 {
-	std::cout << "ScavTrap has been destroyed" << std::endl;
+	std::cout << "\033[1;36mScavTrap\033[0m " << this->_name << " has been destroyed" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& obj)
