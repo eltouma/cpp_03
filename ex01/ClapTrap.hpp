@@ -21,3 +21,5 @@ public:
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
 };
+
+int	tab_size(const char *name[]);

@@ -6,7 +6,7 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:32:05 by eltouma           #+#    #+#             */
-/*   Updated: 2024/10/28 23:32:32 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/10/28 23:57:48 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,12 @@ ClapTrap::~ClapTrap(void)
 ClapTrap& ClapTrap::operator=(const ClapTrap& rhs)
 {
 	if (this != &rhs)
+	{
 		this->_name = rhs.getName();
+		this->_hitPoints = rhs._hitPoints;
+		this->_energyPoints = rhs._energyPoints;
+		this->_attackDamage = rhs._attackDamage;
+	}
 	return (*this);
 }
 
