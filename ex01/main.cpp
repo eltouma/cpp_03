@@ -6,7 +6,7 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:30:44 by eltouma           #+#    #+#             */
-/*   Updated: 2024/10/29 19:58:46 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/10/29 20:55:09 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #include "ScavTrap.hpp"
 
 /*
-If you want to kill them, add this ligne before takeDamage() call
+If you want to kill them, add this line before takeDamage() call
 	for (int i = 0; i < 5; i++)
 
-If you want them to lose all their points, add thisline before attack() call
+If you want them to lose all their points, add this line before attack() call
 	for (int i = 0; i < 50; i++)
 
-If you want to call attack from ClapTrap, add this line
+If you want to call attack() from ClapTrap, add this line into try()
 	scavtrap[j].ClapTrap::attack(scavtrap[j + 1].getName());
 */
 

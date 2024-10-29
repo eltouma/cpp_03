@@ -6,14 +6,14 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:30:44 by eltouma           #+#    #+#             */
-/*   Updated: 2024/10/29 18:02:27 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/10/29 20:56:04 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 /*
-If you want to kill them, add this ligne before takeDamage() call
+If you want to kill them, add this line before takeDamage() call
 	for (int i = 0; i < 5; i++)
 
 If you want them to lose all their points, add thisline before attack() call
