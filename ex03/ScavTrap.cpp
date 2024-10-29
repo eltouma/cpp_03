@@ -6,7 +6,7 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 00:24:17 by eltouma           #+#    #+#             */
-/*   Updated: 2024/10/29 23:31:23 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/10/29 23:54:25 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 ScavTrap::ScavTrap(void)
 {
 	std::cout << "\033[1;36mScavTrap\033[0m " << this->_name << " has been created" << std::endl;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 }
 
 ScavTrap::~ScavTrap(void)
@@ -58,7 +61,7 @@ void	ScavTrap::attack(const std::string& target)
 	{
 		std::cout << this->_name << " has no longer enough energy or hit points to attack (energy: "
 		<< this->_energyPoints << ", hit: " << this->_hitPoints << ")" << std::endl;
-		throw std::invalid_argument("");
+		return ;
 	}
 		std::cout << "💣 ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " point(s) of damage!" << std::endl;
 }
