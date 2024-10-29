@@ -6,12 +6,23 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:30:44 by eltouma           #+#    #+#             */
-/*   Updated: 2024/10/29 14:53:24 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/10/29 19:58:46 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+
+/*
+If you want to kill them, add this ligne before takeDamage() call
+	for (int i = 0; i < 5; i++)
+
+If you want them to lose all their points, add thisline before attack() call
+	for (int i = 0; i < 50; i++)
+
+If you want to call attack from ClapTrap, add this line
+	scavtrap[j].ClapTrap::attack(scavtrap[j + 1].getName());
+*/
 
 int	main(void)
 {
@@ -29,16 +40,9 @@ int	main(void)
 	{
 		try {
 			scavtrap[j].guardGate();
-			for (int i = 0; i < 2; i++)
-				scavtrap[j].beRepaired(12);
-			for (int i = 0; i < 3; i++)
-				scavtrap[j].takeDamage(3);
-			for (int i = 0; i < 3; i++)
-				scavtrap[j].ClapTrap::attack(scavtrap[j + 1].getName());
-			for (int i = 0; i < 20; i++)
-				scavtrap[j].attack(scavtrap[j + 1].getName());
-			for (int i = 0; i < 25; i++)
-				scavtrap[j].beRepaired(2);
+			scavtrap[j].beRepaired(2);
+			scavtrap[j].attack(scavtrap[j + 1].getName());
+			scavtrap[j].takeDamage(50);
 		}
 		catch (std::invalid_argument& e)
 		{

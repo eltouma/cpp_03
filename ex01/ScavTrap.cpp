@@ -6,7 +6,7 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 00:24:17 by eltouma           #+#    #+#             */
-/*   Updated: 2024/10/29 14:26:45 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/10/29 19:52:55 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ void	ScavTrap::attack(const std::string& target)
 	{
 		std::cout << this->_name << " has no longer enough energy or hit points to attack (energy: "
 		<< this->_energyPoints << ", hit: " << this->_hitPoints << ")" << std::endl;
-		return ;
+		throw std::invalid_argument("");
 	}
-		std::cout << "💣 ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " point(s) of damage!" << std::endl;
+		std::cout << "💣 \033[1;36mScavTrap\033[0m " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " point(s) of damage!" << std::endl;
 }
 
 void	ScavTrap::guardGate(void)
