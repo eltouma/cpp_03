@@ -6,15 +6,23 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:30:44 by eltouma           #+#    #+#             */
-/*   Updated: 2024/10/28 23:53:37 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/10/29 18:02:27 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
+/*
+If you want to kill them, add this ligne before takeDamage() call
+	for (int i = 0; i < 5; i++)
+
+If you want them to lose all their points, add thisline before attack() call
+	for (int i = 0; i < 15; i++)
+*/
+
 int	main(void)
 {
-	const char *name[] = {"Jackson", "Jess", "Fabrice", "Elzu", "Mateo", "Mathieu", NULL};
+	const char *name[] = {"Jackson", "Jess", NULL};
 	int	length = tab_size(name);
 
 	ClapTrap claptrap[length];
@@ -23,20 +31,9 @@ int	main(void)
 	for (int j = 0; name[j]; j++)
 	{
 		try {
-			for (int i = 0; i < 2; i++)
-				claptrap[j].beRepaired(12);
-			for (int i = 0; i < 3; i++)
-				claptrap[j].takeDamage(3);
-			for (int i = 0; i < 2; i++)
-				claptrap[j].attack(claptrap[j + 1].getName());
-			for (int i = 0; i < 3; i++)
-				claptrap[j].attack(claptrap[j + 1].getName());
-			for (int i = 0; i < 3; i++)
-				claptrap[j].attack(claptrap[j + 1].getName());
-			for (int i = 0; i < 3; i++)
-				claptrap[j].attack(claptrap[j + 1].getName());
-			for (int i = 0; i < 2; i++)
-				claptrap[j].beRepaired(12);
+			claptrap[j].beRepaired(2);
+			claptrap[j].attack(claptrap[j + 1].getName());
+			claptrap[j].takeDamage(15);
 		}
 		catch (std::invalid_argument& e)
 		{

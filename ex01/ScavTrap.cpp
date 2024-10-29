@@ -6,7 +6,7 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 00:24:17 by eltouma           #+#    #+#             */
-/*   Updated: 2024/10/29 01:19:39 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/10/29 14:26:45 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	std::cout << this->_name << " has been created" << std::endl;
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
-	this->_attackDamage = 100;
+	this->_attackDamage = 20;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)

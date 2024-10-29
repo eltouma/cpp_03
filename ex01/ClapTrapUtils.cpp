@@ -6,7 +6,7 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:31:35 by eltouma           #+#    #+#             */
-/*   Updated: 2024/10/29 01:35:48 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/10/29 14:44:29 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,9 @@ int	tab_size(const char *name[])
 
 	i = 0;
 	while (name[i])
+	{
+		for (int j = 0; name[j]; j++);
 		i += 1;
+	}
 	return (i + 1);
 }
