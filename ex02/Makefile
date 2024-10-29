@@ -1,4 +1,4 @@
-NAME = ClapTrap
+NAME = FragTrap
 
 CC = c++ -Wall -Wextra -Werror -std=c++98 -g3
 MAKEFLAGS += --no-print-directory
@@ -19,12 +19,12 @@ $(OBJS_PATH)%.o: %.cpp
 	$(CC) -c $< -o $@
 
 $(NAME): $(OBJS)
-	@echo "\nCompilation ClapTrap: $(GREEN)success$(RESET)\n"
+	@echo "\nCompilation FragTrap: $(GREEN)success$(RESET)\n"
 	$(CC) $(OBJS) -o $(NAME)
 
 clean:
 	/bin/rm -rf $(OBJS) $(OBJS_PATH)
-	@echo "\nClapTrap removed: $(GREEN)success$(RESET)\n"
+	@echo "\nFragTrap removed: $(GREEN)success$(RESET)\n"
 
 fclean:	clean
 	/bin/rm -rf ${NAME}
