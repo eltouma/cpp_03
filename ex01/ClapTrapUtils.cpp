@@ -6,7 +6,7 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:31:35 by eltouma           #+#    #+#             */
-/*   Updated: 2024/10/28 23:36:28 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/10/29 01:35:48 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	ClapTrap::attack(const std::string& target)
 		<< this->_energyPoints << ", hit: " << this->_hitPoints << ")\n" << std::endl;
 		throw std::invalid_argument("");
 	}
-		std::cout << "💣 " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " point(s) of damage!" << std::endl;
+		std::cout << "💣 ClapTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " point(s) of damage!" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
@@ -40,7 +40,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		<< this->_energyPoints << ", hit: " << this->_hitPoints << ")\n" << std::endl;
 		throw std::invalid_argument("");
 	}
-	std::cout << "✅ " << this->_name << "\n\thitPoints: \t" << this->_hitPoints << "\n\tenergyPoints: \t" << this->_energyPoints << "\n\tattackDamage: \t" << this->_attackDamage << std::endl;
+	std::cout << "✅ ClapTrap " << this->_name << "\n\thitPoints: \t" << this->_hitPoints << "\n\tenergyPoints: \t" << this->_energyPoints << "\n\tattackDamage: \t" << this->_attackDamage << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -55,7 +55,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		<< this->_energyPoints << ", hit: " << this->_hitPoints << ")\n" << std::endl;
 		throw std::invalid_argument("");
 	}
-	std::cout << "💥 " << this->_name << " was attacked" << "\n\thitPoints: \t" << this->_hitPoints << "\n\tenergyPoints: \t" << this->_energyPoints << "\n\tattackDamage: \t" << this->_attackDamage << std::endl;
+	std::cout << "💥 ClapTrap " << this->_name << " was attacked" << "\n\thitPoints: \t" << this->_hitPoints << "\n\tenergyPoints: \t" << this->_energyPoints << "\n\tattackDamage: \t" << this->_attackDamage << std::endl;
 }
 
 int	tab_size(const char *name[])
@@ -64,10 +64,6 @@ int	tab_size(const char *name[])
 
 	i = 0;
 	while (name[i])
-	{
-		for (int j = 0; name[j]; j++)
-			j += 1;
 		i += 1;
-	}
 	return (i + 1);
 }

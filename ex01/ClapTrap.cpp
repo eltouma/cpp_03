@@ -6,7 +6,7 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:32:05 by eltouma           #+#    #+#             */
-/*   Updated: 2024/10/28 23:48:41 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/10/29 00:30:21 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap(void) : _name("John"), _hitPoints(10), _energyPoints(10), _at
 
 ClapTrap::ClapTrap(const ClapTrap& obj)
 {
-	std::cout << "\033[1;32mCopy ClapTrap\033[0m " << this->_name << " has been created" << std::endl;
+	std::cout << "\033[1;33mCopy ClapTrap\033[0m " << this->_name << " has been created" << std::endl;
 	*this = obj;
 }
 

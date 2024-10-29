@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/29 00:24:17 by eltouma           #+#    #+#             */
+/*   Updated: 2024/10/29 01:19:39 by eltouma          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void)
@@ -12,15 +24,16 @@ ScavTrap::~ScavTrap(void)
 
 ScavTrap::ScavTrap(const ScavTrap& obj)
 {
-	std::cout << this->_name << " has been created by copy" << std::endl;
+	std::cout << "\033[1;33mCopy ScavTrap\033[0m " << this->_name << " has been created" << std::endl;
 	*this = obj;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
 	std::cout << this->_name << " has been created" << std::endl;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 100;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)
@@ -47,6 +60,10 @@ void	ScavTrap::attack(const std::string& target)
 		<< this->_energyPoints << ", hit: " << this->_hitPoints << ")" << std::endl;
 		return ;
 	}
-		std::cout << "💣  ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " point(s) of damage!" << std::endl;
+		std::cout << "💣 ScavTrap " << this->_name << " attacks " << target << ", causing " << this->_attackDamage << " point(s) of damage!" << std::endl;
 }
 
+void	ScavTrap::guardGate(void)
+{
+	std::cout << std::endl << this->_name << " is now in Gate keeper mode" << std::endl;
+}
