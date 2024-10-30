@@ -6,7 +6,7 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 00:24:17 by eltouma           #+#    #+#             */
-/*   Updated: 2024/10/29 23:55:07 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/10/30 01:13:40 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap(void)
 {
-	std::cout << "\033[1;36mFragTrap\033[0m " << this->_name << " has been created" << std::endl;
+	std::cout << "\033[1;35mFragTrap\033[0m " << this->_name << " has been created" << std::endl;
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;
 	this->_attackDamage = 30;
@@ -22,12 +22,12 @@ FragTrap::FragTrap(void)
 
 FragTrap::~FragTrap(void)
 {
-	std::cout << "\033[1;36mFragTrap\033[0m " << this->_name << " has been destroyed" << std::endl;
+	std::cout << "\033[1;35mFragTrap\033[0m " << this->_name << " has been destroyed" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& obj)
 {
-	std::cout << "\033[1;33mCopy FragTrap\033[0m " << this->_name << " has been created" << std::endl;
+	std::cout << "\033[1;35mCopy FragTrap\033[0m " << this->_name << " has been created" << std::endl;
 	*this = obj;
 }
 

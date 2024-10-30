@@ -6,7 +6,7 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/28 23:30:44 by eltouma           #+#    #+#             */
-/*   Updated: 2024/10/29 23:39:54 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/10/30 01:23:13 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@
 
 /*
    If you want them to lose all their points, add this line before attack() call
-  	 for (int i = 0; i < 100; i++)
+  	 for (int i = 0; i < 50; i++)
 
 
    If you want to kill them, add this line before takeDamage() call
   	 for (int i = 0; i < 5; i++)
 
+ */
 
+/* 	A MODIFIER
    If you want to create a FragTrap by copy, add this code outside the loop
 	   FragTrap	fragTrapCopy;
 	   fragTrapCopy = FragTrap("Seigneur Bohort");
@@ -44,43 +46,49 @@
 
 int	main(void)
 {
-/*
+
 	const char *name[] = {"Jackson", "Jess", NULL}; 
 	int	length = tab_size(name);
 
-	FragTrap fragtrap[length];
+	DiamondTrap diamondtrap[length];
 	for (int i = 0; name[i]; i++)
-		fragtrap[i] = FragTrap(name[i]);
+		diamondtrap[i] = DiamondTrap(name[i], "");
 	for (int j = 0; name[j]; j++)
 	{
 		try {
-			fragtrap[j].beRepaired(12);
-			fragtrap[j].attack(fragtrap[j + 1].getName());
-			fragtrap[j].takeDamage(50);
+			diamondtrap[j].beRepaired(12);
+			diamondtrap[j].attack(diamondtrap[j + 1].getName());
+			diamondtrap[j].takeDamage(50);
 		}
 		catch (std::invalid_argument& e)
 		{
 			std::cerr << e.what();
 		}
 		try {
-			fragtrap[j].highFivesGuys();
+			diamondtrap[j].highFivesGuys();
 		}
 		catch (std::invalid_argument& e)
 		{
 			std::cerr << e.what();
 		}
 	}
-*/
+
+/*
 	try {
 		DiamondTrap test;
+		ClapTrap test2("Jackson baby");
 		DiamondTrap test1("Oui", "ok");
 		test.whoAmI();
+		test1.attack(test2.getName());
+		test1.beRepaired(12);
+		test1.takeDamage(50);
 		test1.whoAmI();
 	}
 	catch (std::invalid_argument& e)
 	{
 		std::cerr << e.what();
 	}
+*/
 
 	return (0);
 }
