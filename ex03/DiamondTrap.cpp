@@ -6,7 +6,7 @@
 /*   By: eltouma <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 22:32:04 by eltouma           #+#    #+#             */
-/*   Updated: 2024/10/30 01:15:38 by eltouma          ###   ########.fr       */
+/*   Updated: 2024/10/30 01:31:58 by eltouma          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ DiamondTrap::DiamondTrap(std::string name, std::string suffix)
 	suffix = "_clap_name";
 	this->_name = name + suffix;
 	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = 50; 
+//	this->_energyPoints = 50; 
+	this->_energyPoints = ScavTrap::_energyPoints;
 	this->_attackDamage = FragTrap::_attackDamage;
 	std::cout << "\033[1;33mDiamondTrap\033[0m " << this->_name << " has been created with:";
 	std::cout << " hitPoints " << this->_hitPoints;
