@@ -15,11 +15,9 @@
 DiamondTrap::DiamondTrap(void) : _name(ClapTrap::_name)
 {
 	std::cout << "\033[1;33mDiamondTrap\033[0m " << this->_name << " has been created" << std::endl;
-/*
 	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = 50;
+	this->_energyPoints = ScavTrap::_energy;
 	this->_attackDamage = FragTrap::_attackDamage;
-*/
 }
 
 DiamondTrap::~DiamondTrap(void)
@@ -27,13 +25,12 @@ DiamondTrap::~DiamondTrap(void)
 	std::cout << "\033[1;33mDiamondTrap\033[0m " << this->_name << " has been destroyed" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name, std::string suffix)
+DiamondTrap::DiamondTrap(std::string name, std::string suffix) : ScavTrap(), FragTrap()
 {
 	suffix = "_clap_name";
 	this->_name = name + suffix;
 	this->_hitPoints = FragTrap::_hitPoints;
-//	this->_energyPoints = 50; 
-	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_energyPoints = ScavTrap::_energy;
 	this->_attackDamage = FragTrap::_attackDamage;
 	std::cout << "\033[1;33mDiamondTrap\033[0m " << this->_name << " has been created with:";
 	std::cout << " hitPoints " << this->_hitPoints;
@@ -41,10 +38,10 @@ DiamondTrap::DiamondTrap(std::string name, std::string suffix)
 	std::cout << ", attackDamage " << this->_attackDamage << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& obj)
+DiamondTrap::DiamondTrap(const DiamondTrap& obj) : ClapTrap(), ScavTrap(), FragTrap()
 {
-	std::cout << "\033[1;33mCopy DiamondTrap\033[0m " << this->_name << " has been created" << std::endl;
 	*this = obj;
+	std::cout << "\033[1;33mCopy DiamondTrap\033[0m " << this->_name << " has been created" << std::endl;
 }
 
 DiamondTrap& DiamondTrap::operator=(const DiamondTrap& rhs)

@@ -19,29 +19,9 @@
    If you want them to lose all their points, add this line before attack() call
   	 for (int i = 0; i < 50; i++)
 
-
    If you want to kill them, add this line before takeDamage() call
   	 for (int i = 0; i < 5; i++)
 
- */
-
-/* 	A MODIFIER
-   If you want to create a FragTrap by copy, add this code outside the loop
-	   FragTrap	fragTrapCopy;
-	   fragTrapCopy = FragTrap("Seigneur Bohort");
-	   fragTrapCopy.ClapTrap::attack(name[0]);
-
-
-   If you want to create a ScavTrap copy, and attack it with FragTrap copy, add this code outside the loop
-	   FragTrap	fragTrapCopy;
-	   fragTrapCopy = FragTrap("Seigneur Bohort");
-	   fragTrapCopy.ClapTrap::attack(name[0]);
-	   ScavTrap	scavTrapCopy;
-	   scavTrapCopy = ScavTrap("Un lapin adulte");
-	   scavTrapCopy.attack(fragTrapCopy.getName());
-
-  	 // If you want to see Un lapin adulte as a guard keeper, add this line into the try()	
-	   scavTrapCopy.guardGate();
  */
 
 int	main(void)
@@ -56,6 +36,8 @@ int	main(void)
 	for (int j = 0; name[j]; j++)
 	{
 		try {
+			diamondtrap[j].whoAmI();
+			diamondtrap[j].guardGate();
 			diamondtrap[j].beRepaired(12);
 			diamondtrap[j].attack(diamondtrap[j + 1].getName());
 			diamondtrap[j].takeDamage(50);
@@ -72,23 +54,5 @@ int	main(void)
 			std::cerr << e.what();
 		}
 	}
-
-/*
-	try {
-		DiamondTrap test;
-		ClapTrap test2("Jackson baby");
-		DiamondTrap test1("Oui", "ok");
-		test.whoAmI();
-		test1.attack(test2.getName());
-		test1.beRepaired(12);
-		test1.takeDamage(50);
-		test1.whoAmI();
-	}
-	catch (std::invalid_argument& e)
-	{
-		std::cerr << e.what();
-	}
-*/
-
 	return (0);
 }

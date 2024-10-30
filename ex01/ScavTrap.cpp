@@ -12,9 +12,12 @@
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void)
+ScavTrap::ScavTrap(void) : ClapTrap()
 {
 	std::cout << "\033[1;36mScavTrap\033[0m " << this->_name << " has been created" << std::endl;
+	this->_hitPoints = 100;
+	this->_energyPoints = 50;
+	this->_attackDamage = 20;
 }
 
 ScavTrap::~ScavTrap(void)
@@ -22,8 +25,9 @@ ScavTrap::~ScavTrap(void)
 	std::cout << "\033[1;36mScavTrap\033[0m " << this->_name << " has been destroyed" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& obj)
+ScavTrap::ScavTrap(const ScavTrap& obj) : ClapTrap()
 {
+	this->_name = obj._name;
 	std::cout << "\033[1;33mCopy ScavTrap\033[0m " << this->_name << " has been created" << std::endl;
 	*this = obj;
 }

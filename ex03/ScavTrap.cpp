@@ -12,12 +12,13 @@
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap(void)
+ScavTrap::ScavTrap(void) : ClapTrap()
 {
 	std::cout << "\033[1;36mScavTrap\033[0m " << this->_name << " has been created" << std::endl;
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
+	this->_energy = this->_energyPoints;
 }
 
 ScavTrap::~ScavTrap(void)
@@ -25,10 +26,10 @@ ScavTrap::~ScavTrap(void)
 	std::cout << "\033[1;36mScavTrap\033[0m " << this->_name << " has been destroyed" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& obj)
+ScavTrap::ScavTrap(const ScavTrap& obj) : ClapTrap()
 {
-	std::cout << "\033[1;33mCopy ScavTrap\033[0m " << this->_name << " has been created" << std::endl;
 	*this = obj;
+	std::cout << "\033[1;33mCopy ScavTrap\033[0m " << this->_name << " has been created" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
@@ -37,6 +38,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
+	this->_energy = this->_energyPoints;
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)
@@ -47,6 +49,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& rhs)
 		this->_hitPoints = rhs._hitPoints;
 		this->_energyPoints = rhs._energyPoints;
 		this->_attackDamage = rhs._attackDamage;
+		this->_energy = rhs._energyPoints;
 	}
 	return (*this);
 }

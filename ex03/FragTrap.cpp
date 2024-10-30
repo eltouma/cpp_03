@@ -12,7 +12,7 @@
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void)
+FragTrap::FragTrap(void) : ClapTrap()
 {
 	std::cout << "\033[1;35mFragTrap\033[0m " << this->_name << " has been created" << std::endl;
 	this->_hitPoints = 100;
@@ -25,10 +25,10 @@ FragTrap::~FragTrap(void)
 	std::cout << "\033[1;35mFragTrap\033[0m " << this->_name << " has been destroyed" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap& obj)
+FragTrap::FragTrap(const FragTrap& obj) : ClapTrap()
 {
-	std::cout << "\033[1;35mCopy FragTrap\033[0m " << this->_name << " has been created" << std::endl;
 	*this = obj;
+	std::cout << "\033[1;35mCopy FragTrap\033[0m " << this->_name << " has been created" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)

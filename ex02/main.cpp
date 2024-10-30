@@ -25,14 +25,14 @@
 
    If you want to create a FragTrap by copy, add this code outside the loop
 	   FragTrap	fragTrapCopy;
-	   fragTrapCopy = FragTrap("Seigneur Bohort");
-	   fragTrapCopy.ClapTrap::attack(name[0]);
+	   fragTrapCopy = FragTrap("Seigneur Leodagan");
+	   fragTrapCopy.ClapTrap::attack("Un ours d'une toise et demie");
 
 
    If you want to create a ScavTrap copy, and attack it with FragTrap copy, add this code outside the loop
 	   FragTrap	fragTrapCopy;
 	   fragTrapCopy = FragTrap("Seigneur Bohort");
-	   fragTrapCopy.ClapTrap::attack(name[0]);
+	   fragTrapCopy.ClapTrap::attack("Un ours d'une toise et demie");
 	   ScavTrap	scavTrapCopy;
 	   scavTrapCopy = ScavTrap("Un lapin adulte");
 	   scavTrapCopy.attack(fragTrapCopy.getName());
